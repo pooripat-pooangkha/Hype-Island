@@ -24,7 +24,7 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
+        state: "พร้อมช่วยดูแลเซิร์ฟเวอร์",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -61,9 +61,9 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "คุณชื่ออะไร?", required: true },
+      { question: "คุณอายุเท่าไร?", required: true },
+      { question: "ทำไมคุณถึงอยากเข้าร่วม?", required: true },
     ],
 
     // Embed colors by application status.
@@ -224,27 +224,27 @@ export const botConfig = {
       none: {
         emoji: "⚪",
         color: "#95A5A6",
-        label: "None",
+        label: "ไม่มี",
       },
       low: {
         emoji: "🟢",
         color: "#2ECC71",
-        label: "Low",
+        label: "ต่ำ",
       },
       medium: {
         emoji: "🟡",
         color: "#F1C40F",
-        label: "Medium",
+        label: "ปานกลาง",
       },
       high: {
         emoji: "🔴",
         color: "#E74C3C",
-        label: "High",
+        label: "สูง",
       },
       urgent: {
         emoji: "🚨",
         color: "#E91E63",
-        label: "Urgent",
+        label: "เร่งด่วน",
       },
     },
 
@@ -390,7 +390,7 @@ export const botConfig = {
     defaults: {
       // Default naming/description templates for counter entries.
       name: "{name} Counter",
-      description: "Server {name} counter",
+      description: "ตัวนับ {name} ของเซิร์ฟเวอร์",
       // Channel type used for counters (typically "voice").
       type: "voice",
       // Channel name format. `{count}` is replaced automatically.
@@ -411,19 +411,19 @@ export const botConfig = {
     types: {
       // Built-in counter types and how each count is calculated.
       members: {
-        name: "👥 Members",
-        description: "Total members in the server",
+        name: "👥 สมาชิก",
+        description: "จำนวนสมาชิกและบอททั้งหมด",
         getCount: (guild) => guild.memberCount.toString(),
       },
       bots: {
-        name: "🤖 Bots",
-        description: "Total bot accounts in the server",
+        name: "🤖 บอท",
+        description: "จำนวนบอททั้งหมดในเซิร์ฟเวอร์",
         getCount: (guild) =>
           guild.members.cache.filter((m) => m.user.bot).size.toString(),
       },
       members_only: {
-        name: "👤 Humans",
-        description: "Total human members (non-bots)",
+        name: "👤 สมาชิก",
+        description: "จำนวนสมาชิกทั้งหมด (ไม่รวมบอท)",
         getCount: (guild) =>
           guild.members.cache.filter((m) => !m.user.bot).size.toString(),
       },
